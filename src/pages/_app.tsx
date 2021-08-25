@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import GlobalStyles from 'styles/global'
+import TemplateWrapper from 'Template/TemplateWrapper'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -16,7 +17,9 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <TemplateWrapper {...pageProps}>
+        <Component {...pageProps} />
+      </TemplateWrapper>
     </>
   )
 }
